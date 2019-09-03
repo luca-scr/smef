@@ -1,0 +1,17 @@
+Package: smef
+Type: Package
+Version: 0.1.0
+Date: 2019-09-03
+Title: Statistical Methods for Economy and Finance
+Description: An R package accompanying the courses "Statistical Methods For Finance" (Mod. I) and "Statistical Learning and Data Mining" (Mod. II).
+Author: Luca Scrucca
+Maintainer: Luca Scrucca <luca.scrucca@unipg.it>
+Depends: R (>= 3.4), stats, car, maxLik, fGarch
+License: GPL (>= 2)
+Repository: GitHub
+URL: https://github.com/luca-scr/smef
+BugReports: https://github.com/luca-scr/smef/issues
+ByteCompile: true
+NeedsCompilation: yes
+LazyData: yes
+Encoding: UTF-8
