@@ -2,7 +2,7 @@
 
 ## Description
 
-An R package accompanying the courses *Statistical Methods For Finance* (Mod. I) and *Statistical Learning and Data Mining* (Mod. II).
+An R package accompanying the courses *Statistical Methods For Finance* (Mod. I) and *Statistical Learning and Data Mining* (Mod. II) at University of Perugia, Italy.
 
 ## Installation
 
