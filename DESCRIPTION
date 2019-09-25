@@ -6,7 +6,7 @@ Title: Statistical Methods for Economy and Finance
 Description: An R package accompanying the courses "Statistical Methods For Finance" (Mod. I) and "Statistical Learning and Data Mining" (Mod. II).
 Author: Luca Scrucca
 Maintainer: Luca Scrucca <luca.scrucca@unipg.it>
-Depends: R (>= 3.4), stats, car, alr4, maxLik, fGarch, quantmod, xts, zoo, RColorBrewer, doBy
+Depends: R (>= 3.4), stats, car, alr4, Ecdat, maxLik, fGarch, quantmod, xts, zoo, RColorBrewer, doBy
 License: GPL (>= 2)
 Repository: GitHub
 URL: https://github.com/luca-scr/smef

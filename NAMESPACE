@@ -1,3 +1,3 @@
 exportPattern("^[[:alpha:]]+")
 
-import("stats", "car", "alr4", "maxLik", "fGarch", "quantmod", "xts", "zoo", "RColorBrewer", "doBy")
+import("stats", "car", "alr4", "Ecdat", "maxLik", "fGarch", "quantmod", "xts", "zoo", "RColorBrewer", "doBy")
