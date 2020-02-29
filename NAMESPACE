@@ -1,3 +1,7 @@
 exportPattern("^[[:alpha:]]+")
 
-import("stats", "car", "alr4", "Ecdat", "maxLik", "fGarch", "quantmod", "xts", "zoo", "RColorBrewer", "doBy")
+import("stats", "car", "alr4", "Ecdat", "maxLik",
+       "fGarch", "quantmod", "xts", "zoo",
+       "RColorBrewer", "doBy", "jpeg",
+       "mclust", "caret", "caretEnsemble", "ModelMetrics",
+			 "klaR", "mgcv", "leaps", "glmnet")
