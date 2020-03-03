@@ -6,8 +6,15 @@ An R package accompanying the courses *Statistical Methods For Finance* (Mod. I)
 
 ## Installation
 
+1. Update **R** to the latest version available at https://cloud.r-project.org
+
+2. Install/update `devtools` package to the latest version
 ```{r}
-if(!requireNamespace("devtools", quietly = TRUE))
-  install.packages("devtools")                   
+install.packages("devtools")                   
+```
+
+3. Install/update `smef` package
+
+```{r}
 devtools::install_github("luca-scr/smef")        
 ```
