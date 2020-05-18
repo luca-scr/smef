@@ -4,4 +4,7 @@ import("stats", "car", "alr4", "Ecdat", "maxLik",
        "fGarch", "quantmod", "xts", "zoo",
        "RColorBrewer", "doBy", "jpeg",
        "mclust", "caret", "caretEnsemble", "ModelMetrics",
-			 "klaR", "mgcv", "leaps", "glmnet")
+			 "klaR", "mgcv", "leaps", "glmnet", 
+			 "rpart", "rpart.plot", "randomForest")
+
+S3method("print", "describe")
