@@ -1,4 +1,41 @@
-# Information criteria for glmnet models (Ridge, Lasse, ElasticNet)
+#' Information criteria for glmnet models
+#'
+#' Calculates information criteria (AIC, AICc, BIC) for Ridge, Lasso, and
+#' ElasticNet regression models.
+#'
+#' @param object an object of class \code{'glmnet'} obtained from \code{\link[glmnet]{glmnet}} function.
+#'
+#' @return A list containing the following elements:
+#' \itemize{
+#'   \item family
+#'   \item alpha
+#'   \item lambda
+#'   \item dev
+#'   \item dev.ratio
+#'   \item loglik
+#'   \item df
+#'   \item aic
+#'   \item aicc
+#'   \item bic
+#' }
+#'
+#' @examples
+#' data("Credit", package = "ISLR")
+#' Credit <- Credit[,-1]                                # drop id
+#' x <- model.matrix(Balance ~ . , data = Credit)[,-1]  # create design matrix
+#' y <- Credit$Balance
+#' 
+#' mod_ridge <- glmnet::glmnet(x, y, alpha = 0, lambda = exp(seq(0.1, 5, by=0.1)), family = "gaussian")
+#' ic <- ic.glmnet(mod_ridge)
+#' with(ic, { plot(log(lambda), aic); abline(v = lambda[which.min(aic)], lty = 2) })
+#' with(ic, { plot(log(lambda), bic); abline(v = lambda[which.min(bic)], lty = 2) })
+#' 
+#' mod_lasso <- glmnet::glmnet(x, y, alpha = 1, lambda = exp(seq(0.1, 5, by=0.1)), family = "gaussian")
+#' ic <- ic.glmnet(mod_lasso)
+#' with(ic, { plot(log(lambda), aic); abline(v = log(lambda[which.min(aic)]), lty = 2) })
+#' with(ic, { plot(log(lambda), bic); abline(v = log(lambda[which.min(bic)]), lty = 2) })
+#'
+#' @export
 
 ic.glmnet <- function(object, ...)
 {
