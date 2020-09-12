@@ -10,29 +10,29 @@ A meta-package for R accompanying the courses *Statistical Methods For Finance* 
 
 - Option 1: install using `devtools` package
 
-	- Install/update `devtools` package to the latest version
+    - Install/update `devtools` package to the latest version
+	  
+    ```{r}
+    install.packages("devtools")
+    ```
 
-```{r}
-install.packages("devtools")                   
-```
+    - Install/update `smef` package
 
-	- Install/update `smef` package
-
-```{r}
-devtools::install_github("luca-scr/smef")        
-```
+    ```{r}
+    devtools::install_github("luca-scr/smef")
+    ```
 
 - Option 2: install using `remotes` package
 
-	- Install/update `devtools` package to the latest version
+    - Install/update `devtools` package to the latest version
 
-```{r}
-install.packages("remotes")                   
-```
+    ```{r}
+    install.packages("remotes")
+    ```
 
-	- Install/update `smef` package
+    - Install/update `smef` package
 
-```{r}
-remotes::install_github("luca-scr/smef")        
-```
+    ```{r}
+    remotes::install_github("luca-scr/smef")
+    ```
 
