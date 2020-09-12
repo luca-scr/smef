@@ -2,19 +2,37 @@
 
 ## Description
 
-An R package accompanying the courses *Statistical Methods For Finance* (Mod. I) and *Statistical Learning and Data Mining* (Mod. II) at Università degli Studi di Perugia, Italy.
+A meta-package for R accompanying the courses *Statistical Methods For Finance* (Mod. I) and *Statistical Learning and Data Mining* (Mod. II) at Università degli Studi di Perugia, Italy.
 
 ## Installation
 
-1. Update **R** to the latest version available at https://cloud.r-project.org
+- Update **R** to the latest version available at https://cloud.r-project.org
 
-2. Install/update `devtools` package to the latest version
+- Option 1: install using `devtools` package
+
+	- Install/update `devtools` package to the latest version
+
 ```{r}
 install.packages("devtools")                   
 ```
 
-3. Install/update `smef` package
+	- Install/update `smef` package
 
 ```{r}
 devtools::install_github("luca-scr/smef")        
 ```
+
+- Option 2: install using `remotes` package
+
+	- Install/update `devtools` package to the latest version
+
+```{r}
+install.packages("remotes")                   
+```
+
+	- Install/update `smef` package
+
+```{r}
+remotes::install_github("luca-scr/smef")        
+```
+
