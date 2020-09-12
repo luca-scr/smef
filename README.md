@@ -24,7 +24,7 @@ A meta-package for R accompanying the courses *Statistical Methods For Finance* 
 
 - Option 2: install using `remotes` package
 
-    - Install/update `devtools` package to the latest version
+    - Install/update `remotes` package to the latest version
 
     ```{r}
     install.packages("remotes")
