@@ -1,3 +1,19 @@
+#' @name plotImage
+#' @aliases plotImage
+#' 
+#' @title Wald confidence intervals for Maximum Likelihood Estimates
+#' 
+#' @description Wald confidence intervals based on asymptotic Gaussian
+#' distribution of MLE.
+#' 
+#' @param x = a matrix of data values for grey-scale images and a 3-dimensional
+#' array for RGB images.
+#' @param max = the maximum value of RGB color scale.
+#' @param mar = the margin used in the base R graphic. 
+#'
+#' @rdname plotImage
+#' @export
+
 plotImage <- function(x, max = 255, mar = c(0,0,0,0), ...)
 {
   x[x < 0] <- 0

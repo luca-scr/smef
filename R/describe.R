@@ -1,6 +1,22 @@
-#
-# Descriptive statistics for a matrix or data frame
-#
+#' @name describe
+#' @aliases describe
+#' 
+#' @title Descriptive statistics
+#' 
+#' @description Descriptive statistics for a matrix or data frame.
+#' 
+#' @param data = a matrix or a data.frame
+#' @param by = the name of a variable to condition on
+#' @param detailed = logical, if TRUE a detailed summary is returned
+#'
+#' @examples
+#' 
+#' describe(iris, detailed = TRUE)
+#' describe(iris, by = "Species")
+#'
+#' @rdname describe
+#' @export
+
 
 describe <- function(data, by, detailed = FALSE, ...)
 {

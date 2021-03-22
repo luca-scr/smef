@@ -1,13 +1,34 @@
-# Wald conﬁdence intervals
-# based on asymptotic Gaussian distribution of MLE
-
-require(maxLik)
+#' @name confint.maxLik
+#' @aliases confint.maxLik
+#' 
+#' @title Wald confidence intervals for Maximum Likelihood Estimates
+#' 
+#' @description Wald confidence intervals based on asymptotic Gaussian
+#' distribution of MLE.
+#' 
+#' @param object = an object returned by 'maxLik' function. 
+#' @param parm = the name of parameters to compute the confidence intervals.
+#' @param level = the level of confidence interval.
+#'
+#' @return A vector of lower and upper confidence interval limits. 
+#'
+#' @examples
+#' 
+#' # MLE of the rate parameter of exponential distribution
+#' x <- rexp(100, 2.5)
+#' loglik <- function(theta) sum(dexp(x, rate = theta, log = TRUE))
+#' MLE <- maxLik(loglik, start = 1)
+#' summary(MLE)
+#' confint(MLE)
+#' 
+#' @rdname confint.maxLik
+#' @export
 
 confint.maxLik <- function(object, parm, level = 0.95, ...)
 {
   cf <- coef(object)
   if(missing(parm)) 
-    parm <- seq(cf)
+    parm <- seq_along(cf)
   pnames <- names(cf)
   if(is.null(pnames)) 
     pnames <- parm
