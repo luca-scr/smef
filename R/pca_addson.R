@@ -6,9 +6,10 @@
 #' @description Return the data matrix reconstructed using a subset of 
 #' principal components.
 #' 
-#' @param object = an object returned by 'prcomp' function. 
-#' @param npcs = the number of principal componets to use in the reconstruction
-#'
+#' @param object an object returned by 'prcomp' function. 
+#' @param npcs the number of principal componets to use in the reconstruction
+#' @param \dots additional arguments to be passed to the low level functions.
+#' 
 #' @return The reconstructed data matrix. 
 #'
 #' @examples
@@ -44,9 +45,10 @@ prcompRecon <- function(object, npcs = 2, ...)
 #' @description Return the squared reconstruction error from using a subset of 
 #' principal components.
 #' 
-#' @param object = an object returned by 'prcomp' function. 
-#' @param data = the original data matrix
-#'
+#' @param object an object returned by 'prcomp' function. 
+#' @param data the original data matrix
+#' @param \dots additional arguments to be passed to the low level functions.
+#' 
 #' @return A data frame containing the reconstruction error (RE), the mean
 #' square error (MSE), and the R^2 for increasing value of principal 
 #' components.

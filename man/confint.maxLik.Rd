@@ -7,11 +7,13 @@
 \method{confint}{maxLik}(object, parm, level = 0.95, ...)
 }
 \arguments{
-\item{object}{= an object returned by 'maxLik' function.}
+\item{object}{an object returned by `maxLik()` function.}
 
-\item{parm}{= the name of parameters to compute the confidence intervals.}
+\item{parm}{the name of parameters to compute the confidence intervals.}
 
-\item{level}{= the level of confidence interval.}
+\item{level}{the level of confidence interval.}
+
+\item{\dots}{additional arguments to be passed to the low level functions.}
 }
 \value{
 A vector of lower and upper confidence interval limits.

@@ -8,6 +8,8 @@ ic.glmnet(object, ...)
 }
 \arguments{
 \item{object}{an object of class \code{'glmnet'} obtained from \code{\link[glmnet]{glmnet}} function.}
+
+\item{\dots}{additional arguments to be passed to the low level functions.}
 }
 \value{
 A list containing the following elements:

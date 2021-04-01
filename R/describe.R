@@ -5,18 +5,21 @@
 #' 
 #' @description Descriptive statistics for a matrix or data frame.
 #' 
-#' @param data = a matrix or a data.frame
-#' @param by = the name of a variable to condition on
-#' @param detailed = logical, if TRUE a detailed summary is returned
+#' @param data a matrix or a data.frame.
+#' @param by the name of a variable to condition on,
+#' @param detailed logical, if TRUE a detailed summary is returned.
+#' @param digits significant digits.
+#' @param x an object of class `describe`.
+#' @param \dots additional arguments to be passed to the low level functions.
 #'
 #' @examples
 #' 
 #' describe(iris, detailed = TRUE)
-#' describe(iris, by = "Species")
+#' describe(iris, by = Species)
 #'
-#' @rdname describe
+#' @importFrom cli rule 
+#' 
 #' @export
-
 
 describe <- function(data, by, detailed = FALSE, ...)
 {
@@ -115,6 +118,9 @@ describe <- function(data, by, detailed = FALSE, ...)
   options(warn=opt.warn$warn)
   return(obj)
 }
+
+#' @rdname describe
+#' @export
 
 print.describe <- function(x, digits = getOption("digits"), ...)
 {

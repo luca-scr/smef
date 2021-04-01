@@ -7,9 +7,11 @@
 prcompRecon(object, npcs = 2, ...)
 }
 \arguments{
-\item{object}{= an object returned by 'prcomp' function.}
+\item{object}{an object returned by 'prcomp' function.}
 
-\item{npcs}{= the number of principal componets to use in the reconstruction}
+\item{npcs}{the number of principal componets to use in the reconstruction}
+
+\item{\dots}{additional arguments to be passed to the low level functions.}
 }
 \value{
 The reconstructed data matrix.

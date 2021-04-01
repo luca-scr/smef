@@ -6,10 +6,11 @@
 #' @description Wald confidence intervals based on asymptotic Gaussian
 #' distribution of MLE.
 #' 
-#' @param object = an object returned by 'maxLik' function. 
-#' @param parm = the name of parameters to compute the confidence intervals.
-#' @param level = the level of confidence interval.
-#'
+#' @param object an object returned by `maxLik()` function. 
+#' @param parm the name of parameters to compute the confidence intervals.
+#' @param level the level of confidence interval.
+#' @param \dots additional arguments to be passed to the low level functions.
+#' 
 #' @return A vector of lower and upper confidence interval limits. 
 #'
 #' @examples
@@ -36,7 +37,7 @@ confint.maxLik <- function(object, parm, level = 0.95, ...)
          parm <- pnames[parm]
   a <- (1 - level)/2
   a <- c(a, 1 - a)
-  pct <- stats:::format.perc(a, 3)
+  pct <- format.perc(a, 3)
   q <- qnorm(a)
   ci <- array(NA, dim = c(length(parm), 2L), 
               dimnames = list(parm, pct))
@@ -45,4 +46,5 @@ confint.maxLik <- function(object, parm, level = 0.95, ...)
   return(ci)
 }
 
-
+format.perc <- function(probs, digits) 
+paste(format(100 * probs, trim = TRUE, scientific = FALSE, digits = digits), "%")

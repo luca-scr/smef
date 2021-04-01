@@ -7,9 +7,11 @@
 prcompReconError(object, data, ...)
 }
 \arguments{
-\item{object}{= an object returned by 'prcomp' function.}
+\item{object}{an object returned by 'prcomp' function.}
 
-\item{data}{= the original data matrix}
+\item{data}{the original data matrix}
+
+\item{\dots}{additional arguments to be passed to the low level functions.}
 }
 \value{
 A data frame containing the reconstruction error (RE), the mean

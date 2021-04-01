@@ -10,6 +10,8 @@ scatterhist(x, y = NULL, ...)
 \item{x}{a vector, matrix or data frame}
 
 \item{y}{if provided, a vector}
+
+\item{\dots}{additional arguments to be passed to the low level functions.}
 }
 \value{
 None, just produces a plot.
@@ -22,4 +24,5 @@ Plot a scatterplot of bivariate data with histograms for the marginal distributi
 x <- rnorm(200)
 y <- 0.5*x + rnorm(200, 0, 0.1)
 scatterhist(x, y)
+
 }

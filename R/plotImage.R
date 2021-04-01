@@ -6,11 +6,15 @@
 #' @description Wald confidence intervals based on asymptotic Gaussian
 #' distribution of MLE.
 #' 
-#' @param x = a matrix of data values for grey-scale images and a 3-dimensional
-#' array for RGB images.
-#' @param max = the maximum value of RGB color scale.
-#' @param mar = the margin used in the base R graphic. 
-#'
+#' @param x a matrix of data values for grey-scale images and a 3-dimensional array for RGB images.
+#' @param max the maximum value of RGB color scale.
+#' @param mar the margin used in the base R graphic. 
+#' @param \dots additional arguments to be passed to the low level functions.
+#' 
+#' @importFrom graphics par rasterImage
+#' @importFrom grDevices as.raster
+#' 
+#' @importFrom stats coef fivenum median na.omit qnorm sd var vcov
 #' @rdname plotImage
 #' @export
 

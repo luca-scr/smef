@@ -1,9 +1,13 @@
-#' Scatterplot with marginal histograms
+#' @name scatterhist
+#' @aliases scatterhist
 #' 
-#' Plot a scatterplot of bivariate data with histograms for the marginal distributions.
+#' @title Scatterplot with marginal histograms
+#' 
+#' @description Plot a scatterplot of bivariate data with histograms for the marginal distributions.
 #'
 #' @param x a vector, matrix or data frame
 #' @param y if provided, a vector
+#' @param \dots additional arguments to be passed to the low level functions.
 #'
 #' @return None, just produces a plot.
 #'
@@ -12,6 +16,11 @@
 #' x <- rnorm(200)
 #' y <- 0.5*x + rnorm(200, 0, 0.1)
 #' scatterhist(x, y)
+#' 
+#' @importFrom graphics barplot layout
+#' @importFrom grDevices xy.coords
+#' 
+#' @export scatterhist
 
 scatterhist <- function(x, y = NULL, ...)
 {

@@ -1,12 +1,17 @@
-#' Precision-Recall-Fscore performance measures across resamples
+#' @name fscoreSummary
+#' @aliases fscoreSummary
 #' 
-#' Calculates information retrieval measures (Precision, Recall, F1, F2) for 
-#' evaluating a two-class classifier output quality.  
-#' This function can be used in \code{\link[caret]{train}} function for 
+#' @title Precision-Recall-Fscore performance measures across resamples
+#' 
+#' @description Calculates information retrieval measures
+#' (Precision, Recall, F1, F2) for evaluating a two-class classifier 
+#' output quality.  
+#' This function can be used in \code{\link[caret]{train}()} function for 
 #' selecting the hyperparameter(s) of a classifier. This can be achieved by
-#' specifying the argument \code{metric} in \code{train} function call, and
+#' specifying the argument \code{metric} in \code{train()} function call, and
 #' \code{summaryFunction = fscoreSummary} and \code{classProbs = TRUE}
-#' in \code{\link[caret]{trainControl}. See examples below.
+#' in \code{\link[caret]{trainControl}}. 
+#' See examples below.
 #'
 #' @param data	a data frame with columns \code{obs} and \code{pred} for the 
 #' observed and predicted outcomes, and \code{prob} for predicted probabilities 
@@ -15,10 +20,12 @@
 #' @param lev a character vector of factors levels for the response. 
 #' @param model	a character string for the model name (as taken from the 
 #' \code{method} argument of \code{\link[caret]{train}}.
+#' @param \dots additional arguments to be passed to the low level functions.
 #'
 #' @return A vector containing the metrics.
 #'
-#' @details \code{\link{https://en.wikipedia.org/wiki/Precision_and_recall}}
+#' @details For the definition of these performance metrics see 
+#' \url{https://en.wikipedia.org/wiki/Precision_and_recall}.
 #' 
 #' @seealso \code{\link[caret]{twoClassSummary}} 
 #' 
@@ -70,7 +77,7 @@
 #' mod4
 #' plot(mod4)
 #' 
-#'
+#' @importFrom ModelMetrics fScore precision recall
 #' @export
 
 fscoreSummary <- function(data, lev = NULL, model = NULL, ...) 

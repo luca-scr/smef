@@ -16,15 +16,26 @@ See the \code{classProbs} argument to \code{\link[caret]{trainControl}}.}
 
 \item{model}{a character string for the model name (as taken from the 
 \code{method} argument of \code{\link[caret]{train}}.}
+
+\item{\dots}{additional arguments to be passed to the low level functions.}
 }
 \value{
 A vector containing the metrics.
 }
 \description{
-
+Calculates information retrieval measures
+(Precision, Recall, F1, F2) for evaluating a two-class classifier 
+output quality.  
+This function can be used in \code{\link[caret]{train}()} function for 
+selecting the hyperparameter(s) of a classifier. This can be achieved by
+specifying the argument \code{metric} in \code{train()} function call, and
+\code{summaryFunction = fscoreSummary} and \code{classProbs = TRUE}
+in \code{\link[caret]{trainControl}}. 
+See examples below.
 }
 \details{
-\code{\link{https://en.wikipedia.org/wiki/Precision_and_recall}}
+For the definition of these performance metrics see 
+\url{https://en.wikipedia.org/wiki/Precision_and_recall}.
 }
 \examples{
 data = caret::twoClassSim(200)
@@ -73,7 +84,6 @@ mod4 = train(Class ~ . , data = data,
                                       selectionFunction = "best") )
 mod4
 plot(mod4)
-
 
 }
 \seealso{

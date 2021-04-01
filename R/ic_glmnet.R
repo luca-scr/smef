@@ -4,6 +4,7 @@
 #' ElasticNet regression models.
 #'
 #' @param object an object of class \code{'glmnet'} obtained from \code{\link[glmnet]{glmnet}} function.
+#' @param \dots additional arguments to be passed to the low level functions.
 #'
 #' @return A list containing the following elements:
 #' \itemize{
