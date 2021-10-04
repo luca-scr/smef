@@ -2,20 +2,24 @@
 % Please edit documentation in R/plotImage.R
 \name{plotImage}
 \alias{plotImage}
-\title{Wald confidence intervals for Maximum Likelihood Estimates}
+\title{Plot image data}
 \usage{
 plotImage(x, max = 255, mar = c(0, 0, 0, 0), ...)
 }
 \arguments{
-\item{x}{a matrix of data values for grey-scale images and a 3-dimensional array for RGB images.}
+\item{x}{a matrix of data values for Grey-scale images and a 
+3-dimensional array for RGB images.}
 
-\item{max}{the maximum value of RGB color scale.}
+\item{max}{the maximum value of Grey/RGB colour scale (default 255 
+for integer values in the range [0, 255]; another common value is 1 
+for values in the range [0, 1].}
 
 \item{mar}{the margin used in the base R graphic.}
 
-\item{\dots}{additional arguments to be passed to the low level functions.}
+\item{\dots}{additional arguments to be passed to the low level 
+functions.}
 }
 \description{
-Wald confidence intervals based on asymptotic Gaussian
-distribution of MLE.
+Plot a matrix representing a Grey-scale image or a 
+3-dimensional array representing a RGB image.
 }
