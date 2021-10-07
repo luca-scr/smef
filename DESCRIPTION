@@ -27,7 +27,8 @@ Depends:
 	ModelMetrics, 
 	ISLR2, 
 	klaR, 
-	mgcv, 
+	mgcv,
+	visreg, 
 	leaps, 
 	glmnet, 
 	rpart.plot, 
@@ -35,7 +36,7 @@ Depends:
 	gbm, 
 	DMwR2
 Imports: 
-    stats, 
+  stats, 
 	cli
 License: GPL (>= 2)
 Repository: GitHub
