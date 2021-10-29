@@ -1,48 +1,19 @@
 Package: smef
 Type: Package
 Version: 0.8
-Date: 2021-10-04
+Date: 2021-09-14
 Title: Statistical Methods for Economy and Finance
-Description: An R package accompanying the courses "Statistical Methods
-    For Finance" (Mod. I) and "Statistical Learning and Data Mining" 
-    (Mod. II) at University of Perugia, Italy.
+Description: An R package accompanying the courses "Statistical Methods For Finance" (Mod. I) and "Statistical Learning and Data Mining" (Mod. II).
 Author: Luca Scrucca
 Maintainer: Luca Scrucca <luca.scrucca@unipg.it>
-Depends: 
-	R (>= 4.0), 
-	car, 
-	alr4, 
-	Ecdat, 
-	maxLik, 
-	fGarch, 
-	quantmod, 
-	xts, 
-	zoo, 
-	RColorBrewer, 
-	doBy, 
-	jpeg, 
-	mclust, 
-	caret, 
-	caretEnsemble, 
-	ModelMetrics, 
-	ISLR2, 
-	klaR, 
-	mgcv,
-	visreg, 
-	leaps, 
-	glmnet, 
-	rpart.plot, 
-	randomForest, 
-	gbm, 
-	DMwR2
-Imports: 
-	stats, 
-	cli
+Depends: R (>= 4.0), car, alr4, Ecdat, maxLik, fGarch, quantmod, xts, zoo, RColorBrewer, doBy, jpeg, mclust, caret, caretEnsemble, ModelMetrics, ISLR2, klaR, mgcv, leaps, glmnet, rpart.plot, randomForest, gbm, DMwR2, visreg
+Imports: stats, cli
 License: GPL (>= 2)
 Repository: GitHub
 URL: https://github.com/luca-scr/smef
 BugReports: https://github.com/luca-scr/smef/issues
 ByteCompile: true
 NeedsCompilation: yes
+LazyData: yes
 Encoding: UTF-8
-RoxygenNote: 7.1.2
+RoxygenNote: 7.1.1
