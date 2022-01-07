@@ -25,7 +25,12 @@ describe <- function(data, by, detailed = FALSE, ...)
 {
   data_name <- deparse(substitute(data))
   if(!is.data.frame(data))
+  {
+    vars_name <- if(is.vector(data)) data_name else colnames(data)
     data <- as.data.frame(data)
+    if(!is.null(vars_name))
+      colnames(data) <- vars_name
+  }
   vars_name <- colnames(data)
 
   if(!missing(by))
@@ -61,7 +66,8 @@ describe <- function(data, by, detailed = FALSE, ...)
 
   nvar <- length(vars_name)
   obj <- vector(mode="list", length=nvar)
-  names(obj) <- if(nvar > 1) vars_name else data_name
+  # names(obj) <- if(nvar > 1) vars_name else data_name
+  names(obj) <- vars_name
   type <- rep(NA, nvar)
 
   opt.warn <- options("warn")  # save default warning option
@@ -79,8 +85,8 @@ describe <- function(data, by, detailed = FALSE, ...)
       if(detailed)
       {
         out <- summary(as.factor(x))
-        out <- cbind("Freq." = out, "Percent" = out/sum(out)*100,
-                     "Cum.Percent" = cumsum(out/sum(out)*100))
+        out <- cbind("Count" = out, 
+                     "Percent" = out/sum(out)*100)
       } else
       {
         out <- summary(as.factor(x))
@@ -149,19 +155,24 @@ print.describe <- function(x, digits = getOption("digits"), ...)
 
   if(sum(!isNum) > 0)
   {
+    if(sum(isNum) > 0) cat("\n")
     out2 <- descr[!isNum]
     for(j in seq(out2))
     {
       if(is.vector(out2[[j]]))
       {
         out2[[j]] <- do.call("rbind", out2[j])
-        cat("\n")
         print(zapsmall(out2[[j]], digits = digits))
       } else
       {
-        names(dimnames(out2[[j]])) <- c(names(out2)[j], "")
-        print(zapsmall(out2[[j]], digits = digits))
+        # names(dimnames(out2[[j]])) <- c(names(out2)[j], "\b")
+        # print(zapsmall(out2[[j]], digits = digits))
+        outj <- zapsmall(as.data.frame(out2[[j]]), digits = digits)
+        outj <- cbind(rownames(outj), outj)
+        colnames(outj) <- c(names(out2)[j], colnames(outj)[-1])
+        print(outj, row.names = FALSE)
       }
+    if(j < length(out2)) cat("\n")
     }
   }
 

@@ -1,7 +1,7 @@
 Package: smef
 Type: Package
 Version: 0.8
-Date: 2021-09-14
+Date: 2022-01-06
 Title: Statistical Methods for Economy and Finance
 Description: An R package accompanying the courses "Statistical Methods For Finance" (Mod. I) and "Statistical Learning and Data Mining" (Mod. II).
 Author: Luca Scrucca
@@ -16,4 +16,4 @@ ByteCompile: true
 NeedsCompilation: yes
 LazyData: yes
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
