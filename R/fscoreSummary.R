@@ -24,13 +24,11 @@
 #'
 #' @return A vector containing the metrics.
 #'
-#' @details For the definition of these performance metrics see 
-#' \url{https://en.wikipedia.org/wiki/Precision_and_recall}.
-#' 
-#' @seealso \code{\link[caret]{twoClassSummary}} 
+#' @seealso \code{\link[caret]{twoClassSummary}}, \code{\link{ceSummary}}
 #' 
 #' @examples
 #' data = caret::twoClassSim(200)
+#' describe(data)
 #' 
 #' mod1 = train(Class ~ . , data = data,
 #'              method = "rpart2",
@@ -85,8 +83,8 @@ fscoreSummary <- function(data, lev = NULL, model = NULL, ...)
   requireNamespace("ModelMetrics")
   if(length(levels(data$obs)) > 2) 
     stop(paste("Your outcome has", length(levels(data$obs)), 
-               "levels. `fscoreSummary`` function isn't appropriate.", 
-               call. = FALSE))
+               "levels. `fscoreSummary`` function isn't appropriate."), 
+         call. = FALSE)
   if(!all(levels(data[, "pred"]) == levels(data[, "obs"]))) 
     stop("Levels of observed and predicted data do not match.", 
          call. = FALSE)

@@ -33,12 +33,9 @@ specifying the argument \code{metric} in \code{train()} function call, and
 in \code{\link[caret]{trainControl}}. 
 See examples below.
 }
-\details{
-For the definition of these performance metrics see 
-\url{https://en.wikipedia.org/wiki/Precision_and_recall}.
-}
 \examples{
 data = caret::twoClassSim(200)
+describe(data)
 
 mod1 = train(Class ~ . , data = data,
              method = "rpart2",
@@ -87,5 +84,5 @@ plot(mod4)
 
 }
 \seealso{
-\code{\link[caret]{twoClassSummary}}
+\code{\link[caret]{twoClassSummary}}, \code{\link{ceSummary}}
 }
