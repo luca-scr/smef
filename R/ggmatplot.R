@@ -7,12 +7,12 @@
 #' 
 #' @param x vector for the x-axis variable
 #' @param y a matrix or a data.frame for the y-axis variables
-#' @param type character string indicating the type of plot for each column of y. Possible values are "p" for points, "l" for lines, "b" for both points and lines
+#' @param type character string indicating the type of plot for each column of y. Possible values are \code{"p"} for points, \code{"l"} for lines, \code{"b"} for both points and lines
 #' @param pch character string or vector of 1-characters or integers for plotting characters
 #' @param lty vector of line types
 #' @param col vector of colors
 #' @param legend boolean specifying if a legend should be added or not
-#' @param plot boolean specifying if the graph should be added to an existing plot. If `TRUE` it is added to the last ggplot graph, but a specific ggplot object can also be provided
+#' @param plot boolean specifying if the graph should be added to an existing plot. If \code{TRUE} it is added to the last ggplot graph, but a specific ggplot object can also be provided
 #' @param \dots additional arguments
 #'
 #' @seealso matplot
@@ -82,7 +82,8 @@ ggmatplot <- function(x, y, type = "p", pch, lty, col,
   pch <- rep(pch, nc)[1:nc]
   if(missing(lty)) lty <- seq(nc)
   lty <- rep(lty, nc)[1:nc]
-  if(missing(col)) col <- seq(nc)
+  if(missing(col)) col <- palette()
+  if(is.numeric(col)) col <- palette()[col]
   col <- rep(col, nc)[1:nc]
   
   if(is.logical(add))

@@ -11,7 +11,7 @@ ggmatplot(x, y, type = "p", pch, lty, col, legend = FALSE, add = FALSE, ...)
 
 \item{y}{a matrix or a data.frame for the y-axis variables}
 
-\item{type}{character string indicating the type of plot for each column of y. Possible values are "p" for points, "l" for lines, "b" for both points and lines}
+\item{type}{character string indicating the type of plot for each column of y. Possible values are \code{"p"} for points, \code{"l"} for lines, \code{"b"} for both points and lines}
 
 \item{pch}{character string or vector of 1-characters or integers for plotting characters}
 
@@ -23,7 +23,7 @@ ggmatplot(x, y, type = "p", pch, lty, col, legend = FALSE, add = FALSE, ...)
 
 \item{\dots}{additional arguments}
 
-\item{plot}{boolean specifying if the graph should be added to an existing plot. If `TRUE` it is added to the last ggplot graph, but a specific ggplot object can also be provided}
+\item{plot}{boolean specifying if the graph should be added to an existing plot. If \code{TRUE} it is added to the last ggplot graph, but a specific ggplot object can also be provided}
 }
 \description{
 ggplot2 version of matplot base graphic
