@@ -21,7 +21,7 @@
 #' }
 #'
 #' @examples
-#' data("Credit", package = "ISLR")
+#' data("Credit", package = "ISLR2")
 #' Credit <- Credit[,-1]                                # drop id
 #' x <- model.matrix(Balance ~ . , data = Credit)[,-1]  # create design matrix
 #' y <- Credit$Balance

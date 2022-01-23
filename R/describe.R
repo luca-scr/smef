@@ -24,7 +24,7 @@
 describe <- function(data, by, detailed = FALSE, ...)
 {
   data_name <- deparse(substitute(data))
-  if(!is.data.frame(data))
+  if(!isa(data, "data.frame"))
   {
     vars_name <- if(is.vector(data)) data_name else colnames(data)
     data <- as.data.frame(data)
@@ -64,6 +64,9 @@ describe <- function(data, by, detailed = FALSE, ...)
     return(out)
   }
 
+  # skewness <- function(x) mean((x - mean(x))^3)/sd(x)^3
+  # kurtosis <- function(x) mean((x - mean(x))^4)/sd(x)^4 - 3
+
   nvar <- length(vars_name)
   obj <- vector(mode="list", length=nvar)
   # names(obj) <- if(nvar > 1) vars_name else data_name
@@ -72,10 +75,6 @@ describe <- function(data, by, detailed = FALSE, ...)
 
   opt.warn <- options("warn")  # save default warning option
   options(warn=-1)             # and suppress warnings
-  #
-  skewness <- function(x) mean((x - mean(x))^3)/sd(x)^3
-  kurtosis <- function(x) mean((x - mean(x))^4)/sd(x)^4 - 3
-  #
   for(j in seq(nvar))
   {
     x <- data[,j]
@@ -106,15 +105,24 @@ describe <- function(data, by, detailed = FALSE, ...)
       x <- na.omit(x)
       if(detailed)
       {
-        out <- c(length(x), n.miss, mean(x), sd(x), fivenum(x),
-                 skewness(x), kurtosis(x))
-        names(out) <- c("Obs", "NAs", "Mean", "StdDev",
-                        "Min", "Q1", "Median", "Q3", "Max",
-                        "Skewness", "Kurtosis")
+        out <- c("NObs" = length(x), 
+                 "NAs" = n.miss, 
+                 "Mean" = mean(x), 
+                 "StdDev" = sd(x), 
+                 quantile(x, probs = c(0.025, 0.25, 0.5, 0.75, 0.975))) 
+                 # skewness(x), kurtosis(x)
+        # names(out)[1:4] <- c("Obs", "NAs", "Mean", "StdDev",
+        #                 "Min", "Q1", "Median", "Q3", "Max",
+        #                 "Skewness", "Kurtosis")
       } else
       {
-        out <- c(length(x), mean(x), sd(x), min(x), median(x), max(x))
-        names(out) <- c("Obs", "Mean", "StdDev", "Min", "Median", "Max")
+        out <- c("NObs" = length(x), 
+                 "Mean" = mean(x), 
+                 "StdDev" = sd(x), 
+                 "Min" = min(x), 
+                 "Median" = median(x), 
+                 "Max" = max(x))
+        # names(out) <- c("Obs", "Mean", "StdDev", "Min", "Median", "Max")
       }
       obj[[j]] <- out
     }
