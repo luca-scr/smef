@@ -69,7 +69,7 @@ ggmatplot <- function(x, y, type = "p", pch, lty, col,
     x <- seq_len(NROW(y))
     xlabel <- ""
   }
-  
+  x <- as.vector(x)
   y <- as.data.frame(y)
   nc <- NCOL(y)
   xy <- data.frame(x, y, check.names = FALSE)
