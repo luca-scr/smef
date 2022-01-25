@@ -105,7 +105,7 @@ describe <- function(data, by, detailed = FALSE, ...)
       x <- na.omit(x)
       if(detailed)
       {
-        out <- c("NObs" = length(x), 
+        out <- c("Obs" = length(x), 
                  "NAs" = n.miss, 
                  "Mean" = mean(x), 
                  "StdDev" = sd(x), 
@@ -116,7 +116,7 @@ describe <- function(data, by, detailed = FALSE, ...)
         #                 "Skewness", "Kurtosis")
       } else
       {
-        out <- c("NObs" = length(x), 
+        out <- c("Obs" = length(x), 
                  "Mean" = mean(x), 
                  "StdDev" = sd(x), 
                  "Min" = min(x), 
